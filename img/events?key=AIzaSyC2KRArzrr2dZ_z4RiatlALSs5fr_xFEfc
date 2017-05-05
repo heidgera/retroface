@@ -1,0 +1,11 @@
+{
+ "kind": "calendar#events",
+ "etag": "\"p33s9ttstgjkcu0g\"",
+ "summary": "Can Can Wonderland",
+ "updated": "2016-10-19T23:35:30.523Z",
+ "timeZone": "America/Chicago",
+ "accessRole": "reader",
+ "defaultReminders": [],
+ "nextSyncToken": "CPie952E6M8CEAAYAQ==",
+ "items": []
+}

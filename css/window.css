@@ -1,0 +1,258 @@
+::-webkit-scrollbar {
+  background-color: transparent;;
+  width: 10px;
+  position: relative;
+  right: 3px;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:start {
+    width:16px;
+    height:16px;
+    display: none;
+    background-image: url(../img/upArrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:start:active {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ), url(../img/upArrow.png);
+}
+
+::-webkit-scrollbar-button:vertical:increment:end {
+  width:16px;
+  height:16px;
+  display: none;
+  background-image: url(../img/downArrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-button:vertical:increment:end:active {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ), url(../img/downArrow.png);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.1);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-clip: content-box;
+  /*box-shadow:1px 1px 1px .5px rgba(255,255,255,1) inset,  -1px -1px 1px .5px rgba(0,0,0,.5) inset;*/
+}
+
+:host {
+  /*background-color: #ccb;*/
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  position:absolute;
+  top:100px;
+  left:100px;
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 300px;
+  max-height: 200px;
+  height: auto;
+  padding:5px;
+  border-radius: 4px;
+  /*box-shadow:1px 1px 0 .5px #ccb inset,2px 2px 0 1px rgba(255,255,255,.9) inset,
+    -1px -1px 0 .5px rgba(0,0,0,.25) inset,1px 1px 0 1px black;*/
+  pointer-events: all;
+  box-shadow:0px 10px 20px rgba(0,0,0,.5);
+  --title-hgt: 20px;
+  border: 1px solid rgba(0,0,0, 0.25);
+  box-sizing: padding-box;
+}
+
+win-dow{
+  /*background-color: #ccb;*/
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  position:absolute;
+  top:100px;
+  left:100px;
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 300px;
+  max-height: 200px;
+  height: auto;
+  padding:5px;
+  border-radius: 4px;
+  /*box-shadow:1px 1px 0 .5px #ccb inset,2px 2px 0 1px rgba(255,255,255,.9) inset,
+    -1px -1px 0 .5px rgba(0,0,0,.25) inset,1px 1px 0 1px black;*/
+  pointer-events: all;
+  box-shadow:0px 10px 20px rgba(0,0,0,.5);
+  --title-hgt: 20px;
+  border: 1px solid rgba(0,0,0, 0.25);
+  box-sizing: padding-box;
+}
+
+:host(.active) {
+  background: linear-gradient(#e7e4e7 0%, #d2d0d2 20%, #e4e4e4 80%, #d8d8d8 100%);
+}
+
+win-dow.active {
+  background: linear-gradient(#e7e4e7 0%, #d2d0d2 20%, #e4e4e4 80%, #d8d8d8 100%);
+}
+
+win-dow.inactive {
+  background: linear-gradient(#f6f6f6 0%, #f6f6f6 100%);
+}
+
+:host > div {
+  width: calc(100% - 9px);
+  position: absolute;
+}
+
+win-dow > div {
+  width: calc(100% - 9px);
+  position: absolute;
+}
+
+.windowTitle {
+  position: relative;
+  height: var(--title-hgt);
+  /*background-color: #777;*/
+  color: #111;
+  left:3px;
+}
+
+.windowTitle > img{
+  position: relative;
+  display: inline-block;
+  left:2px;
+  top: 2px;
+  height: 14px;
+  width:auto;
+}
+
+.winTitle {
+  position: relative;
+  display: inline-block;
+  height: var(--title-hgt);
+  font-size: 13px;
+  font-weight: bold;
+  line-height: var(--title-hgt);
+  top: 0;
+  left: 10px;
+}
+
+.winButton {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0, 0.25);
+}
+
+.winButton:active {
+  -webkit-filter: brightness(50%);
+}
+
+.winMin {
+  right: 20px;
+  /*background-image: url('../img/min_up.png');*/
+  background-color: rgb(253,191,61);
+}
+
+.winMin:active{
+  /*background-image: url('../img/min_down.png');*/
+
+}
+
+.winClose {
+  right: 2px;
+  background-color: rgb(253,92,89);
+  /*background-image: url('../img/close_up.png');*/
+
+}
+
+.winClose:active{
+  /*background-image: url('../img/close_down.png');*/
+}
+
+:host .entryDivider {
+  position: absolute;
+  display: block;
+  height: 1px;
+  background-color: #aaa;
+  top: var(--title-hgt);
+  width: 100%;
+}
+
+win-dow .entryDivider {
+  position: absolute;
+  display: block;
+  height: 1px;
+  background-color: #aaa;
+  top: calc(var(--title-hgt) + 0px);
+  width: 100%;
+}
+
+.winMenu {
+  position: absolute;
+  top: calc(var(--title-hgt) + 2px);
+  height:18px;
+  padding: 1px;
+}
+
+.winContent {
+  position: absolute;
+  /*top:46px;*/
+  /*flex:1;*/
+  /*height: calc(100% - 69px);*/
+  left:0;
+  width: calc(100%);
+  background-color: #fff;
+  overflow: hidden;
+  /*overflow-y: auto;*/
+  box-sizing: content-box;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+.winFoot {
+  position: absolute;
+  padding-top: 3px;
+  height:18px;
+  bottom:2px;
+}
+
+.winFoot > div {
+  font-size: 11px;
+  line-height: 18px;
+  margin-left: 3px;
+}
+
+.winResize {
+  display:inline-block;
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+
+.frameContent {
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.frameContent > :nth-child(1n+0){
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+}

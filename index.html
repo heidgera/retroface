@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"></meta>
+  <head>
+  	<script src="src/libraries/muse/main.js" main="src/app.js"></script>
+    <title>Retrofit :: Bespoke Goods</title>
+  	<link rel="stylesheet" href="css/style.css"></link>
+  	<link rel="stylesheet" href="css/window.css"></link>
+  	<link rel="stylesheet" href="css/programs.css"></link>
+  	<link rel="stylesheet" href="css/windowMenus.css"></link>
+    <link rel="icon" sizes="192x192" href="img/retroIcon.png"></link>
+    <config-file file="data/config.xml"></config-file>
+  </head>
+  <body>
+    <div id="desktop">
+      <div id="background"></div>
+      <!-- <eye-con name='My_Docs' type='folder'>
+        <eye-con name='present' type='pp'></eye-con>
+      </eye-con> -->
+      <!-- <eye-con name='Decode' type='exe'></eye-con> -->
+      <eye-con name='My_Computer' type='folder'>
+        <eye-con name='present' type='pp'></eye-con>
+      </eye-con>
+      <!-- <eye-con name='Notes' type='txt'></eye-con> -->
+      <eye-con name='Explorer' type='folder'></eye-con>
+      <eye-con name='Calendar' type='folder'></eye-con>
+      <eye-con name='Gallery' type='folder'></eye-con>
+      <div id='windows'>
+      </div>
+    </div>
+    <div id='menuBar'>
+      <div id='start'>
+        <div id='startIcon'></div>
+        <div id='startMenu'>
+          <div class='startItem' id='contact'>
+            <img src='img/retroIcon.png'></img>
+            <span>Contact Us</span>
+          </div>
+          <div class='startItem' id='logout'>
+            <img src='img/power.png'></img>
+            <span>Log Out...</span>
+          </div>
+        </div>
+      </div>
+      <!-- <img class='divider' src='img/divider.png'></img> -->
+      <div class='divider'></div>
+      <div id='winTray'></div>
+      <div id='systemTray'>
+        <div id='clock'>9:00 PM</div>
+      </div>
+    </div>
+    <div id='logOutDialog' class='window'>
+      <div class="windowTitle">
+        <div class='winTitle'>Log Off Windows</div>
+      </div>
+      <div id='logOffPrompt'>
+        <img src='img/logOff.png'></img>
+        <span class='logOffText'>Are you sure you want to log off?</span>
+      </div>
+      <div id='logOffControls'>
+        <span id='loYes' class='button'>Yes</span>
+        <span id='loNo' class='button'>No</span>
+      </div>
+    </div>
+  </body>
+</html>
