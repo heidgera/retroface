@@ -72,6 +72,7 @@
   --title-hgt: 20px;
   border: 1px solid rgba(0,0,0, 0.25);
   box-sizing: padding-box;
+  transform: scale(1);
 }
 
 win-dow{
@@ -96,14 +97,16 @@ win-dow{
   --title-hgt: 20px;
   border: 1px solid rgba(0,0,0, 0.25);
   box-sizing: padding-box;
+  transform: scale(1);
 }
 
 :host([minimized]){
-  display: none !important;
+  transform: scale(0);
+  /*display: none !important;*/
 }
 
 window[minimized]{
-  display: none !important;
+  /*display: none !important;*/
 }
 
 :host(.active) {
