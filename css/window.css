@@ -98,6 +98,14 @@ win-dow{
   box-sizing: padding-box;
 }
 
+:host([minimized]){
+  display: none !important;
+}
+
+window[minimized]{
+  display: none !important;
+}
+
 :host(.active) {
   background: linear-gradient(#e7e4e7 0%, #d2d0d2 20%, #e4e4e4 80%, #d8d8d8 100%);
 }
