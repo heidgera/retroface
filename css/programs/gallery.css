@@ -1,0 +1,110 @@
+:host(gal-lery){
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+
+gal-lery {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.carousel img{
+  display: none;
+  max-width:100%;
+  max-height:100%;
+}
+
+.carousel img[selected]{
+  display: inline-block;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes spinspin{
+  from { transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.spin {
+  position: absolute;
+  display: inline-block;
+  animation: spinspin linear 2s infinite;
+  background-image: url("../../img/galTag/loading.png");
+  background-size: contain;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+}
+
+:host([loaded]) .spin {
+  display: none;
+  animation: none;
+}
+
+[loaded] .spin {
+  display: none;
+  animation: none;
+}
+
+.controls .arrow {
+  position: absolute;
+  top: calc(50% - 12.5px);
+  height: 25px;
+  width:25px;
+  background-size: 100%;
+}
+
+.arrow#prev {
+  left:5px;
+  background-image: url("../../img/galTag/prevArrow.png");
+}
+
+.arrow#next {
+  right:5px;
+  background-image: url("../../img/galTag/nextArrow.png");
+}
+
+.dots {
+  position: absolute;
+  top:90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height:10px;
+  width:100%;
+  text-align: center;
+}
+
+.dots>div{
+  display: inline-block;
+  height:8px;
+  width:8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.5);
+  background-color: none;
+  margin: 1px;
+}
+
+/*mix-blend-mode: difference;*/
+
+.dots>div[selected]{
+  background-color: rgba(255,255,255,.5);
+}

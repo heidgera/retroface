@@ -67,13 +67,13 @@ addLbl.textContent = 'Address';
 var addBox = µ('+div', address);
 addBox.className = 'addressBox';
 addBox.contentEditable = true;
-addBox.textContent = 're.trof.it';
+addBox.textContent = 'http://startribune.com';
 
 menu.style.height = '42px';
 
 main.resetContentHeight();
 
-main.changeSize(640, 480);
+main.changeSize(window.innerWidth * .75, window.innerHeight * .75);
 
 main.navigate = function(add, fakeAddress) {
   /*if (~add.indexOf('http://')) {
@@ -89,6 +89,9 @@ main.navigate = function(add, fakeAddress) {
   } else {
     add = 'data/drk/error.html';
   }*/
+  if (!add.includes('http://') && !add.includes('https://')) {
+    add = 'http://' + add;
+  }
 
   µ('#load', main.content).src = add;
   if (fakeAddress) addBox.textContent = fakeAddress;
@@ -108,10 +111,6 @@ addBox.onkeypress = function(e) {
 addBox.onmousedown = function(e) {
   e.stopPropagation();
   addBox.focus();
-};
-
-main.content.onmousedown = function() {
-
 };
 
 main.resetContentHeight();

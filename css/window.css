@@ -1,4 +1,4 @@
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
   background-color: transparent;;
   width: 10px;
   position: relative;
@@ -39,7 +39,6 @@
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
-    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
 }
 
 ::-webkit-scrollbar-thumb {
@@ -47,42 +46,18 @@
   border: 1px solid #aaa;
   border-radius: 5px;
   background-clip: content-box;
-  /*box-shadow:1px 1px 1px .5px rgba(255,255,255,1) inset,  -1px -1px 1px .5px rgba(0,0,0,.5) inset;*/
-}
-
-:host {
-  /*background-color: #ccb;*/
-  display: flex;
-  visibility: hidden;
-  flex-direction: column;
-  position:absolute;
-  top:100px;
-  left:100px;
-  min-width: 300px;
-  min-height: 200px;
-  max-width: 300px;
-  max-height: 200px;
-  height: auto;
-  padding:5px;
-  border-radius: 4px;
-  /*box-shadow:1px 1px 0 .5px #ccb inset,2px 2px 0 1px rgba(255,255,255,.9) inset,
-    -1px -1px 0 .5px rgba(0,0,0,.25) inset,1px 1px 0 1px black;*/
-  pointer-events: all;
-  box-shadow:0px 10px 20px rgba(0,0,0,.5);
-  --title-hgt: 20px;
-  border: 1px solid rgba(0,0,0, 0.25);
-  box-sizing: padding-box;
-  transform: scale(1);
-}
+}*/
 
 win-dow{
+  --xpos: 100px;
+  --ypos: 100px;
   /*background-color: #ccb;*/
   display: flex;
   visibility: hidden;
   flex-direction: column;
   position:absolute;
-  top:100px;
-  left:100px;
+  top:0;
+  left:0;
   min-width: 300px;
   min-height: 200px;
   max-width: 300px;
@@ -90,35 +65,38 @@ win-dow{
   height: auto;
   padding:5px;
   border-radius: 4px;
-  /*box-shadow:1px 1px 0 .5px #ccb inset,2px 2px 0 1px rgba(255,255,255,.9) inset,
-    -1px -1px 0 .5px rgba(0,0,0,.25) inset,1px 1px 0 1px black;*/
   pointer-events: all;
   box-shadow:0px 10px 20px rgba(0,0,0,.5);
   --title-hgt: 20px;
   border: 1px solid rgba(0,0,0, 0.25);
   box-sizing: padding-box;
-  transform: scale(1);
+  transform: translate(var(--xpos),var(--ypos)) scale(1);
 }
 
 :host([minimized]){
-  transform: scale(0);
+  transform: translate(0, 100vh) scale(0) !important;
   /*display: none !important;*/
 }
 
 window[minimized]{
+  transform: translate(0, 100vh) scale(0) !important;
   /*display: none !important;*/
 }
 
 :host(.active) {
   background: linear-gradient(#e7e4e7 0%, #d2d0d2 20%, #e4e4e4 80%, #d8d8d8 100%);
 }
-
 win-dow.active {
   background: linear-gradient(#e7e4e7 0%, #d2d0d2 20%, #e4e4e4 80%, #d8d8d8 100%);
 }
 
 win-dow.inactive {
+  transition: transform .25s ease;
   background: linear-gradient(#f6f6f6 0%, #f6f6f6 100%);
+}
+:host(.inactive) {
+  transition: transform .25s ease;
+  background: linear-gradient(#e7e4e7 0%, #d2d0d2 20%, #e4e4e4 80%, #d8d8d8 100%);
 }
 
 :host > div {
@@ -253,6 +231,8 @@ win-dow .entryDivider {
 .winResize {
   display:inline-block;
   position: absolute;
+  width: 16px;
+  height: auto;
   right:0;
   bottom:0;
 }

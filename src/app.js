@@ -17,7 +17,7 @@ obtain(['µ/utilities.js', retroDir + 'desktop.js', retroDir + 'calendar.js', re
       var s = utils.zeroPad(time.getSeconds(), 2);
 
       //return ((h<=12)?h:h%12) + ((s%2)?':':'\u2009') + m + ((h>=12)?' PM':' AM');
-      return ((h <= 12) ? h : h % 12) + ((s%2)?':':'\u2009') + m + ((h >= 12) ? ' PM' : ' AM');
+      return ((h <= 12) ? h : h % 12) + ((s % 2) ? ':' : '\u2009') + m + ((h >= 12) ? ' PM' : ' AM');
 
       //return time.toLocaleTimeString();
     }
@@ -31,9 +31,25 @@ obtain(['µ/utilities.js', retroDir + 'desktop.js', retroDir + 'calendar.js', re
 
     var dt = µ('#windows');
 
-    µ('#contact').onclick = ()=> {
-      µ('[name=' + µ('#contact>target') + ']')[0].openWindow();
-    };
+    function startMenuItemClick() {
+      var targ = µ('|>target', this);
+      if (µ('[name=' + targ + ']')[0]) {
+        µ('[name=' + targ + ']')[0].openWindow();
+      } else {
+        µ('win-dow').forEach(function(ind, item) {
+          console.log(item);
+          if (µ('[name=' + targ + ']', item.content)[0]) {
+            µ('[name=' + targ + ']', item.content)[0].openWindow();
+            return;
+          }
+        });
+      }
+    }
+
+    µ('#contact').onclick = startMenuItemClick.bind(µ('#contact'));
+
+    µ('#portfolio').onclick = startMenuItemClick.bind(µ('#portfolio'));
+    µ('#resume').onclick = startMenuItemClick.bind(µ('#resume'));
 
     document.onmousemove = function(e) {
       //e.preventDefault();
