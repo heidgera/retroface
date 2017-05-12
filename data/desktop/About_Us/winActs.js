@@ -25,7 +25,8 @@ main.onClose = function(contn) {
   }
 };
 
-var file = µ('+menu-item');
+var file = new customElements.get('menu-item')();
+console.log(file);
 file.addTitle('File');
 file.addOption('Open', function(argument) {
   var sel = cont.selected;
