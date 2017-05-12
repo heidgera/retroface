@@ -23,6 +23,8 @@ gal-lery {
 }
 
 .carousel img[selected]{
+  height: auto;
+  width: auto;
   display: inline-block;
 }
 

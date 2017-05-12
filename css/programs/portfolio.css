@@ -5,7 +5,7 @@
 .frameContent>div {
   max-width:100%;
   max-height: 100%;
-  overflow: overlay;
+  overflow: scroll;
   background-color: black;
   background: url("../../img/portfolio/bg.png") repeat;
   color: #fff;

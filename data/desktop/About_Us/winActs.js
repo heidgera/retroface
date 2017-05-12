@@ -9,8 +9,6 @@ var fcont = µ('.frameContent', main.content)[0];
 var cont = µ('+div', fcont);
 var foot = main.foot;
 
-main.style.visibility = 'visible';
-
 var kids = icon.querySelectorAll('eye-con');
 for (var i = 0; i < kids.length; i++) {
   cont.appendChild(kids[i]);
@@ -58,3 +56,4 @@ edit.addOption('Paste');
 menu.appendChild(edit);
 
 main.resetContentHeight();
+main.style.visibility = 'visible';
