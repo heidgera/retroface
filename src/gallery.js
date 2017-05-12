@@ -146,4 +146,7 @@ if (!customElements.get('gal-lery')) {
 
     provide(exports);
   });
+} else {
+  exports.gallery = customElements.get('gal-lery');
+  provide(exports);
 }
