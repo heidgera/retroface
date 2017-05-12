@@ -46,7 +46,7 @@ obtain([window.retroDir + 'menuItems.js'], (MI)=> {
 
   menu.appendChild(file);
 
-  var edit = document.createElement('menu-item');
+  var edit = new MI.menuItem();
   edit.addTitle('Edit');
   edit.addOption('Undo');
   edit.addOption('Redo');
