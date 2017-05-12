@@ -68,6 +68,7 @@ win-dow{
   pointer-events: all;
   box-shadow:0px 10px 20px rgba(0,0,0,.5);
   --title-hgt: 20px;
+  --menu-hgt:18px;
   border: 1px solid rgba(0,0,0, 0.25);
   box-sizing: padding-box;
   transform: translate(var(--xpos),var(--ypos)) scale(1);
@@ -196,12 +197,13 @@ win-dow .entryDivider {
 .winMenu {
   position: absolute;
   top: calc(var(--title-hgt) + 2px);
-  height:18px;
+  height:var(--menu-hgt);
   padding: 1px;
 }
 
 .winContent {
   position: absolute;
+  top: calc(var(--title-hgt) + var(--menu-hgt) + 4px);
   /*top:46px;*/
   /*flex:1;*/
   /*height: calc(100% - 69px);*/
