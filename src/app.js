@@ -5,7 +5,9 @@ console.log('in app');
 exports.app = {};
 obtain(['µ/utilities.js', retroDir + 'desktop.js', retroDir + 'calendar.js', retroDir + 'startMenu.js'], function(utils, desk, cal, start) {
   exports.app.start = ()=> {
-    µ('.connecting')[0].hidden = true;
+    setTimeout(()=> {
+      µ('.connecting')[0].hidden = true;
+    }, 1000);
     console.log('run app');
     var refreshRate = 30;
 
