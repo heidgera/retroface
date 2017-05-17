@@ -1,0 +1,41 @@
+load-ing {
+  width:auto;
+  height: auto;
+  pointer-events: none;
+  opacity: 1;
+}
+
+:host(load-ing) {
+  position: relative;
+  width:auto;
+  height: auto;
+  text-align: center;
+  pointer-events: none;
+}
+
+@keyframes spinspin{
+  from { transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.spin {
+  position: absolute;
+  display: inline-block;
+  animation: spinspin linear 2s infinite;
+  background-image: url("../img/loading/loading.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+}
+
+:host(load-ing[done]) .spin{
+  transition: opacity .5s ease;
+  opacity: 0;
+}
