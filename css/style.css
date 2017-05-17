@@ -375,34 +375,3 @@ body {
   font-size: 12px;
   line-height: 22px;
 }
-
-.connecting {
-  transition: opacity .5s ease;
-  position: fixed;
-  margin:auto;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background-color: #444;
-  color: #fff;
-  font-size: 30pt;
-  text-align: center;
-  height: auto;
-  opacity: 1;
-}
-
-.connecting[done] {
-  opacity: 0
-}
-
-.connecting span{
-  display: block;
-  margin-top: 30vh;
-}
-
-load-ing {
-  display: block;
-  height: 200px;
-  margin: 10vh;
-}
