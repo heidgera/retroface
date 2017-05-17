@@ -1,5 +1,4 @@
 .connecting {
-  transition: opacity .5s ease;
   position: fixed;
   margin:auto;
   top:0;
@@ -16,7 +15,9 @@
 }
 
 .connecting[hidden] {
-  opacity: 0
+  transition: opacity .25s ease;
+  display: block;
+  opacity: 0;
 }
 
 .connecting span{
