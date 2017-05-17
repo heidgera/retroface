@@ -33,6 +33,8 @@ load-ing {
   right: 0;
   width: 100%;
   height: auto;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 :host(load-ing[done]) .spin{
